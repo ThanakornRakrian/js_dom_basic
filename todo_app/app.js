@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderTasks(filteredTasks);
 	});
 
+	// searchInput.addEventListener("input", () => {
+	// 	const searchText = searchInput.value.trim().toLowerCase();
+	// 	const filteredTasks = tasks.filter((task) =>
+	// 		task.text.toLowerCase().includes(searchText)
+	// 	);
+	// 	renderTasks(filteredTasks);
+	// });
+
 	function renderTasks(tasksToRender) {
 		taskList.innerHTML = "";
 		tasksToRender.forEach((task) => {
@@ -58,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			buttonContainer.appendChild(deleteBtn);
 
 			taskItem.appendChild(buttonContainer);
+			
 			taskList.appendChild(taskItem);
 		});
 	}

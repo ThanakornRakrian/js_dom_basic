@@ -46,13 +46,18 @@ const students = [
 
 // map: Create an array of student names and IDs
 // Output: An array of student names and IDs
-
-/* const studentNamesAndIds = students.map((student) => ({
-	id: student.id,
-	name: student.name,
-})); */
-
+// Format: Array.map((item) => ({})); // retuen new array of objects
+/* const studentNamesAndIds = students.map((student) => {
+	return {
+		id: student.id,
+		name: student.name,
+	};
+}); */
 // console.log(studentNamesAndIds);
+
+/* const array = [1, 2, 3];
+const result = array.map((student) => ({}));
+console.log(result); */
 
 // filter: Create an array of all students from Ravenclaw house
 // Output: An array of students from Ravenclaw
@@ -67,50 +72,16 @@ const students = [
 // Reduce method to calculate total points for each house
 // Output: The total points for each house
 // Function to calculate total points for each house
- function calculateHousePoints() {
+function calculateHousePoints() {
 	return students.reduce((acc, student) => {
-
-		console.log(acc)
-		console.log([student])
-		console.log([student.house])
-		console.log(acc[student.house])
-		console.log(!acc[student.house])
-		console.log(acc);
-		console.log(!50);
-		console.log([]);
-		console.log({});
-		console.log({}['Gryffindor']);// ทำไมเป็น undefined
-		console.log(['Gryffindor']);
-		console.log(!{}['Gryffindor']);
-		console.log({'Gryffindor' : 50}['Gryffindor']); //ทำไมถึงเป็น เลข
-		console.log({'Gryffindor' : 50}['Gryffindor'],'Develop'); //ทำไมถึงเป็น เลข
-		console.log({'Gryffindor' : 50});
-		
-		// {}"Gryffindor"
-		if (!acc[student.house]) { //!obj[value]
-			console.log(!undefined)
-			console.log(!acc[student.house])
-			console.log(acc[student.house])
-			console.log([student.house])
-			console.log(acc)
+		if (!acc[student.house]) {
+			// !obj[key]   // ! === NOT // !true === false
 			acc[student.house] = 0;
-			console.log(!acc[student.house])
-			console.log(acc[student.house])
-			console.log([student.house])
-			console.log(acc)
+			// console.log(acc);
 		}
-		// acc[student.house] = 0;
-		
-		console.log(!acc[student.house])
-		console.log(acc[student.house])
-		console.log([student.house])
-		console.log(acc)
-
+		// console.log(acc);
 		acc[student.house] += student.points;
-		console.log(!acc[student.house])
-		console.log(acc[student.house])
-		console.log([student.house])
-		console.log(acc)
+		// console.log(acc);
 		return acc;
 	},{} /*{'Gryffindor':5}*/);
 }
@@ -122,8 +93,9 @@ console.log("Initial House Points:", housePoints);
 /* // Function to add points to a student
 function addPointsToStudent(studentId, points) {
 	const student = students.find((student) => student.id === studentId);
+	// console.log(student);
 	if (student) {
-		student.points += points;
+		student.points += points; // as same as : x = x + points ---> x += points
 		housePoints = calculateHousePoints(); // Recalculate house points
 		console.log(
 			`${points} points added to ${student.name}. Total now: ${student.points}`
@@ -133,19 +105,22 @@ function addPointsToStudent(studentId, points) {
 	}
 } */
 
-/* // Function to remove points from a student
-function removePointsFromStudent(studentId, points) {
-	const student = students.find((student) => student.id === studentId);
-	if (student) {
-		student.points = Math.max(0, student.points - points); // Ensure points don't go negative
-		housePoints = calculateHousePoints(); // Recalculate house points
-		console.log(
-			`${points} points removed from ${student.name}. Total now: ${student.points}`
-		);
-	} else {
-		console.log(`Student with ID ${studentId} not found.`);
-	}
-} */
+// Add 50 points to student ID: 2 <"Hermione Granger">
+// addPointsToStudent(2, 50);
+
+// // Function to remove points from a student
+// function removePointsFromStudent(studentId, points) {
+// 	const student = students.find((student) => student.id === studentId);
+// 	if (student) {
+// 		student.points = Math.max(0, student.points - points); // Ensure points don't go negative
+// 		housePoints = calculateHousePoints(); // Recalculate house points
+// 		console.log(
+// 			`${points} points removed from ${student.name}. Total now: ${student.points}`
+// 		);
+// 	} else {
+// 		console.log(`Student with ID ${studentId} not found.`);
+// 	}
+// }
 
 /* // Function to announce the winning house
 function announceWinningHouse() {
@@ -168,7 +143,7 @@ function announceWinningHouse() {
 
 /////////////////////////////////
 
-/* // Function to find the student with the maximum house points
+// Function to find the student with the maximum house points
 function findStudentWithMaxPoints() {
 	const student = students.reduce(
 		(maxStudent, currentStudent) =>
@@ -181,7 +156,7 @@ function findStudentWithMaxPoints() {
 }
 
 // Find the student with the maximum house points
-findStudentWithMaxPoints(); */
+findStudentWithMaxPoints();
 
 ///////////////////////////////////
 // Array Methods Chaining
@@ -209,9 +184,9 @@ function findTopStudentFromEachHouse(students) {
 const topStudents = findTopStudentFromEachHouse(students);
 
 // Display the top students
-console.log("Top Students from Each House:");
+/* console.log("Top Students from Each House:");
 topStudents.forEach((student) => {
 	console.log(
 		`${student.name} from ${student.house} with ${student.points} points.`
 	);
-});
+}); */
