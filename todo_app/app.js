@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			taskInput.value = "";
 		}
 	});
+	// console.log("ID : ",Date.now());
 
 	searchBtn.addEventListener("click", () => {
 		const searchText = searchInput.value.trim().toLowerCase();

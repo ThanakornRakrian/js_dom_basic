@@ -46,10 +46,12 @@ const students = [
 
 // map: Create an array of student names and IDs
 // Output: An array of student names and IDs
+
 /* const studentNamesAndIds = students.map((student) => ({
 	id: student.id,
 	name: student.name,
 })); */
+
 // console.log(studentNamesAndIds);
 
 // filter: Create an array of all students from Ravenclaw house
@@ -65,19 +67,57 @@ const students = [
 // Reduce method to calculate total points for each house
 // Output: The total points for each house
 // Function to calculate total points for each house
-/* function calculateHousePoints() {
+ function calculateHousePoints() {
 	return students.reduce((acc, student) => {
-		if (!acc[student.house]) {
+
+		console.log(acc)
+		console.log([student])
+		console.log([student.house])
+		console.log(acc[student.house])
+		console.log(!acc[student.house])
+		console.log(acc);
+		console.log(!50);
+		console.log([]);
+		console.log({});
+		console.log({}['Gryffindor']);// ทำไมเป็น undefined
+		console.log(['Gryffindor']);
+		console.log(!{}['Gryffindor']);
+		console.log({'Gryffindor' : 50}['Gryffindor']); //ทำไมถึงเป็น เลข
+		console.log({'Gryffindor' : 50}['Gryffindor'],'Develop'); //ทำไมถึงเป็น เลข
+		console.log({'Gryffindor' : 50});
+		
+		// {}"Gryffindor"
+		if (!acc[student.house]) { //!obj[value]
+			console.log(!undefined)
+			console.log(!acc[student.house])
+			console.log(acc[student.house])
+			console.log([student.house])
+			console.log(acc)
 			acc[student.house] = 0;
+			console.log(!acc[student.house])
+			console.log(acc[student.house])
+			console.log([student.house])
+			console.log(acc)
 		}
+		// acc[student.house] = 0;
+		
+		console.log(!acc[student.house])
+		console.log(acc[student.house])
+		console.log([student.house])
+		console.log(acc)
+
 		acc[student.house] += student.points;
+		console.log(!acc[student.house])
+		console.log(acc[student.house])
+		console.log([student.house])
+		console.log(acc)
 		return acc;
-	}, {});
+	},{} /*{'Gryffindor':5}*/);
 }
 
 // Initial house points calculation
 let housePoints = calculateHousePoints();
-console.log("Initial House Points:", housePoints); */
+console.log("Initial House Points:", housePoints);
 
 /* // Function to add points to a student
 function addPointsToStudent(studentId, points) {
